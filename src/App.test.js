@@ -4,7 +4,7 @@ import AppRouter from './App';
 test('renders learn react link', async () => {
     render(<AppRouter />);
     const linkElement = await screen.findAllByText(/Login/i);
-    console.log(linkElement);
+    // console.log(linkElement);
     // expect(linkElement).;
 });
 
