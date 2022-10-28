@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true betadev07/todo-client npm run test
 deploy:
   provider: elasticbeanstalk
-  name: "docker-react-client"
+  app: "docker-react-client"
   env: "Dockerreactclient-env"
   region: "ap-south-1"
   bucket_name: "elasticbeanstalk-ap-south-1-941450861109"
