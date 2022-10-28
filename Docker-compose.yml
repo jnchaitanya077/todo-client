@@ -1,0 +1,26 @@
+version: '3'
+services:
+  todo-app-client:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/app/node_modules"
+      - ".:/app"
+    restart: always
+    ports:
+      - "3000:3001"
+  todo-app-backend:
+    build: ../../server/.
+    restart: always
+    ports:
+      - "4000:4000"
+  testing:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/app/node_modules"
+      - ".:/app"
+    command: ["npm", "run", "test"]
+
